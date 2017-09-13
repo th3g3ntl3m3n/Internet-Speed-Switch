@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Net Switch</string>
+    <string name="energy_switch">Net Switch</string>
+    <string name="ipaddr">IPADDR</string>
+    <string name="cell">Cell</string>
+    <string name="url">Info</string>
+</resources>

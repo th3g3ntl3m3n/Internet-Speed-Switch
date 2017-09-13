@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/holo_red_light"
+        android:padding="5dip">
+
+        <TextView
+            android:id="@+id/headerText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:padding="5dp"
+            android:text="@string/energy_switch"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textSize="25sp" />
+
+        <RadioGroup
+            android:id="@+id/netWorkSwitch"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_below="@id/headerText"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:background="@drawable/pink_out_line"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/wifi"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="1dp"
+                android:layout_marginLeft="1dp"
+                android:layout_marginTop="1dp"
+                android:layout_weight="1"
+                android:background="@drawable/toggle_widget_background"
+                android:button="@null"
+                android:checked="true"
+                android:gravity="center"
+                android:text="WiFi"
+                android:textColor="@android:color/white" />
+
+            <RadioButton
+                android:id="@+id/network"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp"
+                android:layout_marginTop="1dp"
+                android:layout_weight="1"
+                android:background="@drawable/toggle_widget_background"
+                android:button="@null"
+                android:gravity="center"
+                android:text="Network"
+                android:textColor="@android:color/white" />
+        </RadioGroup>
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar"
+        android:background="#222222"
+        android:orientation="vertical"
+        android:padding="5dip">
+
+        <com.github.anastr.speedviewlib.ImageSpeedometer
+            android:id="@+id/bigMeter"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_weight="5"
+            app:sv_image="@drawable/abcd"
+            app:sv_indicator="SpindleIndicator"
+            app:sv_maxSpeed="0"
+            app:sv_minSpeed="-100"
+            app:sv_speedTextColor="@android:color/white"
+            app:sv_speedTextFormat="INTEGER"
+            app:sv_speedTextPosition="BOTTOM_CENTER"
+            app:sv_speedTextSize="30sp"
+            app:sv_tickNumber="10"
+            app:sv_tickPadding="40dp"
+            app:sv_unit="dBm         "
+            app:sv_unitTextColor="@android:color/white"
+            app:sv_unitTextSize="20sp"
+            app:sv_withTremble="false" />
+
+        <com.github.anastr.speedviewlib.ImageSpeedometer
+            android:id="@+id/smallMeter"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="end"
+            android:layout_weight="3"
+            app:sv_image="@drawable/abcd"
+            app:sv_indicator="TriangleIndicator"
+            app:sv_maxSpeed="0"
+            app:sv_minSpeed="-100"
+            app:sv_speedTextColor="@android:color/white"
+            app:sv_speedTextFormat="INTEGER"
+            app:sv_speedTextPosition="BOTTOM_CENTER"
+            app:sv_unit="dBm       "
+            app:sv_unitTextColor="@android:color/white"
+            app:sv_withTremble="false" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="3"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/ipaddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="10dp"
+                    android:text="@string/ipaddr"
+                    android:textColor="@android:color/white"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/linkSpeed"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="10dp"
+                    android:text="@string/ipaddr"
+                    android:textColor="@android:color/white"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/snrValue"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="10dp"
+                    android:text="SNR"
+                    android:textColor="@android:color/white"
+                    android:textSize="20sp" />
+
+            </LinearLayout>
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/takeSpeedTest"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_margin="16dp"
+                android:padding="0dp"
+                android:text="SpeedTest"
+                app:backgroundTint="@android:color/white"
+                app:srcCompat="@drawable/speed" />
+        </RelativeLayout>
+    </LinearLayout>
+</RelativeLayout>
